@@ -172,3 +172,15 @@ extraObjects:
   #     data:
   #       - key: secret-access-key
   #         name: awssm-secret
+# -- configuration of postgres
+postgresql:
+  enabled: true
+  postgresqlUsername: dtrack
+  postgresqlPassword: dtrackpassword
+  postgresqlDatabase: dependencytrack
+dependencyTrack:
+  database:
+    type: postgresql
+    url: jdbc:postgresql://dependency-track-postgresql:5432/dependencytrack
+    username: dtrack
+    password: dtrackpassword
