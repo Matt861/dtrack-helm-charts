@@ -15,6 +15,7 @@ maintainers:
     email: nscuro@protonmail.com
     url: https://github.com/nscuro
 dependencies:
-  - name: postgresql
-    version: 10.3.11
-    repository: https://charts.bitnami.com/bitnami
+- name: postgresql
+  version: ~10.10
+  repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+  condition: postgresql.enabled
