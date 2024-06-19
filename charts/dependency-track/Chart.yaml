@@ -6,9 +6,9 @@ appVersion: 4.11.3
 description: |-
   Dependency-Track is an intelligent Component Analysis platform
   that allows organizations to identify and reduce risk in the software supply chain.
-home: https://github.com/DependencyTrack/dependency-track
+home: https://github.com/Matt861/dependency-track
 sources:
-  - https://github.com/DependencyTrack/helm-charts/tree/main/charts/dependency-track
+  - https://github.com/Matt861/dtrack-helm-charts/tree/main/charts/dependency-track
 icon: https://avatars.githubusercontent.com/u/40258585
 maintainers:
   - name: nscuro
