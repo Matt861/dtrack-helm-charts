@@ -3,10 +3,18 @@ entries:
   dependency-track:
   - apiVersion: v2
     appVersion: 4.11.3
-    created: "2024-06-19T17:11:38.3042374-05:00"
+    created: "2024-06-19T19:25:13.6967399-05:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: ~10.10
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.0.x
     description: Dependency-Track is an intelligent Component Analysis platform that
       allows organizations to identify and reduce risk in the software supply chain.
-    digest: 9282e995e9d6f9446b46986fb651f39b92cbfea7dabefbb2bfb53c2f07934691
+    digest: 0ebbaa02665f46084a6e463ddf196ff7431c9c6a3274ce77b3211e0810a81f52
     home: https://github.com/Matt861/dependency-track
     icon: https://avatars.githubusercontent.com/u/40258585
     maintainers:
@@ -20,4 +28,4 @@ entries:
     urls:
     - https://matt861.github.io/dtrack-helm-charts/dependency-track-0.9.1.tgz
     version: 0.9.1
-generated: "2024-06-19T17:11:38.3032372-05:00"
+generated: "2024-06-19T19:25:13.6917401-05:00"
