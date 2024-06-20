@@ -54,6 +54,17 @@ spec:
         {{- with .Values.frontend.extraEnvFrom }}
         envFrom: {{ toYaml . | nindent 8 }}
         {{- end }}
+        - name: DB_user
+          value: dtrack
+        - name: DB_password
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgresql
+              key: password
+        - name: DB_dbname
+          value: dependencytrack
+        - name: DB_host            
+          value: {{ .Release.Name }}-postgresql.{{ .Release.Namespace }}.svc
         ports:
         - name: web
           containerPort: 8080
