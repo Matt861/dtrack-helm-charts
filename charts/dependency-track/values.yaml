@@ -174,10 +174,30 @@ extraObjects:
   #         name: awssm-secret
 # -- configuration of postgres
 postgresql:
-  enabled: true
-  postgresqlUsername: dtrack
-  postgresqlPassword: dtrackpassword
-  postgresqlDatabase: dependencytrack
+    auth:
+        username: dtrack
+        password: dtrackpassword
+        database: dependencytrack
+    primary:
+        podSecurityContext:
+            enabled: false
+            fsGroup: ""
+        containerSecurityContext:
+            enabled: false
+            runAsUser: "auto"
+
+    readReplicas:
+        podSecurityContext:
+            enabled: false
+            fsGroup: ""
+        containerSecurityContext:
+            enabled: false
+            runAsUser: "auto"
+
+    volumePermissions:
+        enabled: false
+        securityContext:
+            runAsUser: "auto"
 dependencyTrack:
   database:
     type: postgresql
