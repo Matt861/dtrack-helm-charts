@@ -5,7 +5,7 @@
 Dependency-Track is an intelligent Component Analysis platform
 that allows organizations to identify and reduce risk in the software supply chain.
 
-**Homepage:** <https://github.com/DependencyTrack/dependency-track>
+**Homepage:** <https://github.com/Matt861/dependency-track>
 
 ## Maintainers
 
@@ -15,7 +15,13 @@ that allows organizations to identify and reduce risk in the software supply cha
 
 ## Source Code
 
-* <https://github.com/DependencyTrack/helm-charts/tree/main/charts/dependency-track>
+* <https://github.com/Matt861/dtrack-helm-charts/tree/main/charts/dependency-track>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.bitnami.com/bitnami | postgresql | 15.5.7 |
 
 ## Values
 
@@ -69,6 +75,10 @@ that allows organizations to identify and reduce risk in the software supply cha
 | common.serviceAccount.automount | bool | `false` | Whether the serviceAccount should mount the token. |
 | common.serviceAccount.create | bool | `true` | Whether the chart should generate a serviceAccount |
 | common.serviceAccount.name | string | `""` | Use the name of the name of the release by default, or specify a custom name. |
+| dependencyTrack.database.password | string | `"dtrackpassword"` |  |
+| dependencyTrack.database.type | string | `"postgresql"` |  |
+| dependencyTrack.database.url | string | `"jdbc:postgresql://dependency-track-postgresql:5432/dependencytrack"` |  |
+| dependencyTrack.database.username | string | `"dtrack"` |  |
 | extraObjects | list | `[]` | Create extra manifests via values. |
 | frontend.additionalVolumeMounts | list | `[]` |  |
 | frontend.additionalVolumes | list | `[]` |  |
@@ -104,8 +114,9 @@ that allows organizations to identify and reduce risk in the software supply cha
 | frontend.service.type | string | `"ClusterIP"` |  |
 | frontend.tolerations | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hostname | string | `"example.com"` |  |
+| ingress.enabled | bool | `true` |  |
+| ingress.hostname | string | `"matt861-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com"` |  |
 | ingress.ingressClassName | string | `""` |  |
 | ingress.tls | list | `[]` |  |
+| postgresql | object | `{"auth":{"database":"dependencytrack","password":"dtrackpassword","username":"dtrack"},"primary":{"containerSecurityContext":{"enabled":false,"runAsUser":"auto"},"podSecurityContext":{"enabled":false,"fsGroup":""}},"readReplicas":{"containerSecurityContext":{"enabled":false,"runAsUser":"auto"},"podSecurityContext":{"enabled":false,"fsGroup":""}},"volumePermissions":{"enabled":false,"securityContext":{"runAsUser":"auto"}}}` | configuration of postgres |
 
